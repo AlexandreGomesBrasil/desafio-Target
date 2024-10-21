@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contar Letras A</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contar letra "a" em uma string</h2>
+        <input type="text" id="texto" placeholder="Digite uma frase" />
+        <button onclick="contarA()">Contar</button>
+        <div class="result" id="resultado"></div>
+    </div>
+
+    <script>
+        function contarA() {
+            const texto = document.getElementById('texto').value;
+            const contagem = (texto.match(/a/gi) || []).length;
+            document.getElementById('resultado').textContent = `A letra "a" aparece ${contagem} vezes.`;
+        }
+    </script>
+</body>
+</html>
